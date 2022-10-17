@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --primary: #1e90ff;
+    --white: #fff;
+    --secondary: #fecd45;
+  }
+
+/* Header styles */
+header {
+    height: 10%;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1.2rem;
+    position: fixed;
+}
+
+header, .title{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Content styles */
+.h-full {
+    height: 100%;
+} 
+
+.w-full { 
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid{
+    display: grid;
+}
+
+.center {
+    justify-content: center;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.form-container{
+    width: 180px;
+    margin: 5px;
+}
+
+.form-container input{
+    margin: 5px 0;
+    width: 100%;
+    height: 30px;
+    border: 1px solid var(--primary);
+    border-radius: 25px;
+    padding: 5px;
+    outline: none;
+}
+
+.form-container input:focus{
+    border: 2.5px solid var(--secondary);
+}
+
+.calc-btn{
+    background-color: var(--secondary);
+    border: none;
+    padding: 10px 14px;
+    color: var(--white);
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calc-btn:hover{
+    background-color: darkgoldenrod;
+}
