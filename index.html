@@ -25,10 +25,15 @@
                 </div>
             </div>
 
-            <button class="calc-btn" style="margin-top: 10px;">
-                Calcular
+            <button class="calc-btn grid center items-center" style="margin-top: 10px;" onclick="ui.openSpinner((value) => ui.showTitleBtn(!value))">
+                <span id="btn-title"></span>
+                <svg class="spinner" width="30px" height="30px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg" id="spinner">
+                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                </svg>
             </button>
         </div>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
