@@ -25,7 +25,10 @@
                 </div>
             </div>
 
-            <button class="calc-btn grid center items-center" style="margin-top: 10px;" onclick="ui.openSpinner((value) => ui.showTitleBtn(!value))">
+            <button class="calc-btn grid center items-center" style="margin-top: 10px;" onclick="ui.openSpinner((value) => {
+                ui.showTitleBtn(!value)
+                ui.showModal()
+            })">
                 <span id="btn-title"></span>
                 <svg class="spinner" width="30px" height="30px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg" id="spinner">
                     <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
@@ -33,6 +36,11 @@
             </button>
         </div>
     </section>
+
+    <div class="modal-window flex center" modal>
+        <div class="modal-overlay" id="overlay" overlay></button>
+        <div class="alert">Hello!</div>
+    </div>
 
     <script src="script.js"></script>
 </body>

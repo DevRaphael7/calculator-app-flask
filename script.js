@@ -1,11 +1,18 @@
-class UiInterface{
+class UiInterface {
 
     showSpinner;
     btnTitle;
+    modal;
      
-    constructor(spinnerState) { 
-        this.showSpinner = spinnerState;
-        this.btnTitle = document.getElementById("btn-title");
+    constructor(spinnerState) {
+        this.showSpinner = spinnerState
+        this.btnTitle = document.getElementById("btn-title")
+        this.modal = document.querySelector("[modal]")
+
+        //Adicionar evento para overlay
+        document.getElementById('overlay').addEventListener('click', (e) => {
+            this.showModal()
+        })
     }
 
     openSpinner(callback) {
@@ -27,6 +34,16 @@ class UiInterface{
     showTitleBtn(show) {
         if(show) this.btnTitle.style.display = "block";
         else this.btnTitle.style.display = "none";
+    }
+
+    showModal(){
+        if(this.modal.classList.contains("show")) {
+            document.querySelector("[overlay]").classList.remove("show")
+            this.modal.classList.remove("show")
+        } else {
+            this.modal.classList.add("show")
+            document.querySelector("[overlay]").classList.add("show")
+        }
     }
 }
 
