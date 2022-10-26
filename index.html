@@ -17,16 +17,17 @@
             <div class="flex">
                 <div class="form-container">
                     <label>Number one</label>
-                    <input placeholder="Número 1">
+                    <input placeholder="Número 1" num1 type="number">
                 </div>
                 <div class="form-container">
                     <label>Number two</label>
-                    <input placeholder="Número 2">
+                    <input placeholder="Número 2" num2 type="number">
                 </div>
             </div>
 
-            <button class="calc-btn grid center items-center" style="margin-top: 10px;" onclick="ui.openSpinner((value) => {
+            <button class="calc-btn grid center items-center" style="margin-top: 10px;" onclick="ui.openSpinner( async (value) => {
                 ui.showTitleBtn(!value)
+                await calcular()
                 ui.showModal()
             })">
                 <span id="btn-title"></span>
@@ -39,7 +40,7 @@
 
     <div class="modal-window flex center" modal>
         <div class="modal-overlay" id="overlay" overlay></button>
-        <div class="alert">Hello!</div>
+        <div class="alert txt-center" result></div>
     </div>
 
     <script src="script.js"></script>

@@ -47,6 +47,27 @@ class UiInterface {
     }
 }
 
+class ApiRest {
+
+    static async post(url, body){
+        try {
+            const response = await fetch(url, { 
+                body: JSON.stringify(body), 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const dados = await response.json()
+            return dados
+        } catch(ex){
+            console.log(ex)
+            return null
+        }
+    }
+
+}
+
 //Classe correspondente a interface do usuário.
 const ui = new UiInterface(true);
 
@@ -55,3 +76,20 @@ ui.openSpinner((value) => {
 }) //Vai ocultar o spinner;
 
 ui.setHtmlTitleBtn("Calcular")
+
+async function calcular() {
+
+    const number1 = parseFloat(document.querySelector('[num1]').value)
+    const number2 = parseFloat(document.querySelector("[num2]").value)
+
+    ApiRest.post('http://127.0.0.1:8002/calculator', {
+        num1: number1,
+        num2: number2,
+        operation: "+"
+    }).then(response => {
+        ui.openSpinner((value) => {
+            ui.showTitleBtn(!value);
+            document.querySelector("[result]").innerHTML = `<p>${response.result}</p>`
+        })
+    })
+}

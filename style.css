@@ -73,6 +73,10 @@ header, .title{
     outline: none;
 }
 
+.txt-center{
+    text-align: center;
+}
+
 .form-container input:focus{
     border: 2.5px solid var(--secondary);
 }
